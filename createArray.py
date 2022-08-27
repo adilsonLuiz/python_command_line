@@ -84,7 +84,7 @@ class CreateArray(object):
                 fileOutput.write(f'-=-=-=-=-=-=-= Inicio da geração de Arrays -=-=-=-=-=-=-=\n\n')
 
                 for index, array_element in enumerate(self.array_to_transform):
-                    fileOutput.write(f'{index + 1 }º - {array_element}\n')
+                    fileOutput.write(f'{index + 1 }º - {array_element}\n\n')
                     #fileOutput.write(str(self.array_to_transform) + '\n')
                 fileOutput.write(f'=-=-=-==-=-=--==-= Resultado da geração =-=-=-==-=-=--==-=\n\n')
                 fileOutput.writelines(f'Soma de elementos dos Arrays: {self.total_elements_array_argv}\n')
