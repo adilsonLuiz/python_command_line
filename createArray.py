@@ -152,4 +152,3 @@ class CreateArray(object):
 
 create_array_obj = CreateArray()
 create_array_obj.run()
-print(create_array_obj)
