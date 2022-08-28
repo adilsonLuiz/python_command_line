@@ -24,10 +24,6 @@ class CreateArray(object):
         # Attributes comming with parameters
 
         self.array_user_data = [element.strip() for element in self.arguments[-1].split(self.separetor_valuer)] # Split string array send by user in terminal
-        
-
-
-    
 
 
     def check_default_arguments(self):
@@ -50,7 +46,6 @@ class CreateArray(object):
             self.split_array = True
         if '--sep' in self.arguments:
             self.separetor_custom = True
-
 
     
     def init_arguments_rules(self):
@@ -82,7 +77,6 @@ class CreateArray(object):
         # Generate array data with break valuer 0, 4 - 2
         if self.split_array:
             self.array_to_transform = [self.array_user_data[array_valuer:array_valuer + self.split_array_valuer] for array_valuer in range(0, len(self.array_user_data), self.split_array_valuer)]
-            print('aaa: ' + str([self.array_user_data[array_valuer:array_valuer + self.split_array_valuer] for array_valuer in range(0, len(self.array_user_data), self.split_array_valuer)]))
         else:
             self.array_to_transform = [element for element in self.array_user_data] # Return one array without break
         
@@ -135,8 +129,10 @@ class CreateArray(object):
         Split array to write in file: {self.array_to_transform}\n
         '''
 
+
     def get_user_arguments(self) -> list:
         return [ x.lower() for x in argv[1:] ] # Exclude frist element in arguments, is program name!
+
 
     def get_total_element_in_array(self) -> int:
         return len(self.arguments[-1].split(self.separetor_valuer))
