@@ -137,6 +137,7 @@ class CreateArray(object):
     def get_total_element_in_array(self) -> int:
         return len(self.arguments[-1].split(self.separetor_valuer))
 
+
     def run(self):
         """
             Init program
