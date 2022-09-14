@@ -8,7 +8,7 @@ um exemplo 'DADOS, DADOS, DADOS', seria uma fonte de dados valida para ser trasn
 
 # Parametros disponiveis
 
-#break
+# --break
 Se este parametro for utilizado ira "quebrar" a geração do array colocando dentro de cada array a quantidade de elementos igual ao valor deste paramentro
 EX: createArray --break 2 'DADOS, DADOS, DADOS, DADOS' 
 Output: Array01: ['DADOS', 'DADOS'], Array02: ['DADOS', 'DADOS']
