@@ -4,19 +4,8 @@ from os import getlogin
 
 
 class CreateArray(object):
-    """createArray
-Este é um utilitario pare ser consumido por um terminal, por tanto, você precisa colocar o arquivo fonte no PATH do seu sistema operacional para poder executar de qualquer diretorio. O objetivo do createArray é gerar um array a partir de uma fonte de dados do tipo string.
-
-um exemplo 'DADOS, DADOS, DADOS', seria uma fonte de dados valida para ser trasnformado em um array.
-
-Parametros disponiveis
---break
-Se este parametro for utilizado ira "quebrar" a geração do array colocando dentro de cada array a quantidade de elementos igual ao valor deste paramentro EX: createArray --break 2 'DADOS, DADOS, DADOS, DADOS' Output: Array01: ['DADOS', 'DADOS'], Array02: ['DADOS', 'DADOS']
-
-Ex de uso:
-
-Python CreateArray.py --break 2 'element1, element2, element3, element4'
-    
+    """
+        This is a terminal utility, so you need to place the source file in your operating system PATH to be able to run it from any directory. The purpose of createArray is to generate an array from a string data source.
     """
     def __init__(self) -> None:
         """
@@ -46,10 +35,10 @@ Python CreateArray.py --break 2 'element1, element2, element3, element4'
         """
         # Frist step check with the array argument has been send
         if not self.arguments:
-            print('''\nERRO: Necessario enviar dados string por parametro!
-                Exemplo de uso:
-                Exemplo 1: createArray.py  --break 2 "element01, element02, element03"
-                Exemplo 2: createArray.py "element1, element1"\n
+            print('''\nERRO: Mandatory Send the string with parameter!
+                Example to use it:
+                Example 1: createArray.py  --break 2 "element01, element02, element03"
+                Example 2: createArray.py "element1, element1"\n
                 ''')
             exit(0)
         
@@ -106,21 +95,21 @@ Python CreateArray.py --break 2 'element1, element2, element3, element4'
                 
                 len_data_array = len(self.array_to_transform)
                 
-                fileOutput.write(f'-=-=-=-=-=-=-= Inicio da geração de Arrays -=-=-=-=-=-=-=\n\n')
+                fileOutput.write(f'-=-=-=-=-=-=-= Begin of generation of Arrays -=-=-=-=-=-=-=\n\n')
 
                 for index, array_element in enumerate(self.array_to_transform):
                     fileOutput.write(f'{index + 1 }º - {array_element}\n\n')
                     #fileOutput.write(str(self.array_to_transform) + '\n')
-                fileOutput.write(f'=-=-=-==-=-=--==-= Resultado da geração =-=-=-==-=-=--==-=\n\n')
-                fileOutput.writelines(f'Soma de elementos dos Arrays: {self.user_array_size}\n')
-                fileOutput.writelines(f'Total de Arrays gerados: {len_data_array}\n')
+                fileOutput.write(f'=-=-=-==-=-=--==-= Output =-=-=-==-=-=--==-=\n\n')
+                fileOutput.writelines(f'Sum of elements in Arrays: {self.user_array_size}\n')
+                fileOutput.writelines(f'Total of Arrays genereted: {len_data_array}\n')
                     
             else:  # If not break array
-                fileOutput.write(f'-=-=-=-=-=-=-= Inicio da geração de Arrays -=-=-=-=-=-=-=\n\n')
+                fileOutput.write(f'-=-=-=-=-=-=-= Begin of generation of Arrays -=-=-=-=-=-=-=\n\n')
                 fileOutput.write(f'{self.array_to_transform}\n')
-                fileOutput.write(f'=-=-=-==-=-=--==-= Resultado da geração =-=-=-==-=-=--==-=\n\n')
-                fileOutput.writelines(f'\nTotal de elementos dentro do Array:{self.user_array_size}\n')
-                fileOutput.writelines('Uma array foi gerado apenas\n')
+                fileOutput.write(f'=-=-=-==-=-=--==-= Output =-=-=-==-=-=--==-=\n\n')
+                fileOutput.writelines(f'\nTotal of elements inside:{self.user_array_size}\n')
+                fileOutput.writelines('Only one array is been generated\n')
                 fileOutput.write('\n\n')
             fileOutput.close()
             
